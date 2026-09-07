@@ -1,11 +1,19 @@
 :root {
   font-family: "Segoe UI", system-ui, sans-serif;
-  color: #e7ebe9;
-  background: #101413;
+  color: var(--text);
+  background: var(--background);
   font-synthesis: none;
-  --muted: #a0ada7;
-  --line: #303c36;
-  --accent: #c5f881;
+  color-scheme: dark;
+  --background: #15151c;
+  --surface: #1d1d28;
+  --surface-soft: #20202c;
+  --text: #eeeef0;
+  --border: #3d3d50;
+  --orange: #ff8900;
+  --indigo: #4b4eff;
+  --muted: #aaaabf;
+  --line: #2c2c3b;
+  --accent: #a5a7ff;
 }
 * {
   box-sizing: border-box;
@@ -49,8 +57,8 @@ a {
   letter-spacing: 0.04em;
 }
 .brand-mark {
-  color: #101413;
-  background: var(--accent);
+  color: var(--background);
+  background: var(--orange);
   font-size: 18px;
   font-weight: 900;
   padding: 9px 8px;
@@ -88,7 +96,7 @@ main {
   padding: 48px 0 34px;
 }
 .eyebrow {
-  color: var(--accent);
+  color: var(--orange);
   font:
     12px ui-monospace,
     monospace;
@@ -114,13 +122,13 @@ p {
     monospace;
   letter-spacing: 0.07em;
   border: 1px solid var(--line);
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--orange);
   padding: 12px 17px;
   white-space: nowrap;
 }
 .runtime-badge strong {
   display: block;
-  color: #e7ebe9;
+  color: var(--text);
   font-size: 19px;
   margin-top: 5px;
   letter-spacing: 0.15em;
@@ -135,7 +143,7 @@ form {
   min-width: 0;
 }
 .panel {
-  background: #171e1a;
+  background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 10px;
   margin: 0 0 20px;
@@ -151,8 +159,8 @@ form {
   font:
     13px ui-monospace,
     monospace;
-  border: 1px solid #475044;
-  color: var(--accent);
+  border: 1px solid var(--border);
+  color: var(--orange);
   padding: 8px;
   border-radius: 6px;
 }
@@ -195,9 +203,9 @@ small {
 input,
 select,
 textarea {
-  border: 1px solid #46534b;
-  background: #101612;
-  color: #eef1ef;
+  border: 1px solid var(--border);
+  background: var(--background);
+  color: var(--text);
   width: 100%;
   padding: 11px 12px;
   border-radius: 6px;
@@ -213,7 +221,7 @@ textarea {
 }
 input::placeholder,
 textarea::placeholder {
-  color: #819187;
+  color: var(--muted);
   opacity: 1;
 }
 :focus-visible {
@@ -298,15 +306,15 @@ input[type="checkbox"] {
   min-width: 0;
 }
 .secondary {
-  background: #273228;
-  color: #e6ece7;
-  border: 1px solid #495749;
+  background: var(--surface-soft);
+  color: var(--text);
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 11px 12px;
   font-size: 14px;
 }
 .secondary:hover {
-  background: #354331;
+  background: var(--line);
 }
 .advanced summary {
   font-size: 15px;
@@ -318,8 +326,8 @@ input[type="checkbox"] {
 .output {
   position: sticky;
   top: 22px;
-  background: #171e1a;
-  border: 1px solid #526544;
+  background: var(--surface);
+  border: 1px solid var(--indigo);
   border-radius: 10px;
   overflow: hidden;
   min-width: 0;
@@ -340,7 +348,7 @@ input[type="checkbox"] {
   justify-content: space-between;
   gap: 10px;
   padding: 12px 20px;
-  background: #212a24;
+  background: var(--surface-soft);
   border-block: 1px solid var(--line);
 }
 .preview-toolbar select {
@@ -363,12 +371,12 @@ input[type="checkbox"] {
 }
 pre {
   margin: 0;
-  background: #0d120f;
+  background: #101017;
   height: 330px;
   max-height: 40vh;
   overflow: auto;
   padding: 22px;
-  color: #b8cfba;
+  color: #bcbcff;
   font:
     12px/1.75 ui-monospace,
     "Cascadia Code",
@@ -380,8 +388,8 @@ pre {
 }
 .primary {
   width: 100%;
-  background: var(--accent);
-  color: #172111;
+  background: var(--indigo);
+  color: #ffffff;
   font-size: 16px;
   font-weight: 700;
   padding: 15px 18px;
@@ -393,7 +401,7 @@ pre {
   gap: 12px;
 }
 .primary:hover {
-  background: #d4ffa0;
+  background: #4144d9;
 }
 button:disabled {
   cursor: not-allowed;
@@ -431,7 +439,7 @@ li + li {
 }
 li code {
   font-size: 12px;
-  color: #d7e7d0;
+  color: #bcbcff;
   overflow-wrap: anywhere;
 }
 .error {
@@ -444,7 +452,7 @@ li code {
 }
 .secret-notice {
   padding: 18px 22px;
-  background: #242a1c;
+  background: var(--surface-soft);
   font-size: 14px;
 }
 .secret-notice button {
@@ -454,7 +462,7 @@ footer {
   border-top: 1px solid var(--line);
   margin-top: 38px;
   padding: 24px 0 32px;
-  color: #c3cec7;
+  color: var(--text);
   display: flex;
   justify-content: space-between;
   gap: 20px;
