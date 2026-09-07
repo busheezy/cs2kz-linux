@@ -1,4 +1,4 @@
-# CS2KZ Docker
+# CS2KZ Linux
 
 Run a complete CS2KZ server with **Docker Compose**, built on Valve's **Steam Runtime 3 / Sniper**. Standalone Docker is the primary setup: generate a deployment, start it, and manage installation, updates, configuration, console commands, backups, and optional SFTP with Docker.
 
@@ -17,7 +17,7 @@ The image contains the runtime libraries, SteamCMD bootstrap, component installe
 
 ## Browser generator
 
-Open `docs/index.html` directly in a browser, or use the [hosted generator](https://busheezy.github.io/cs2kz-docker/). No host runtime, package installation, or backend is needed to use the generator. It produces a ZIP with Compose, runtime settings, server configuration, optional SFTP keys/CS2KZ overrides, and launch instructions. Credentials are generated/processed locally and are never sent to a server or saved in browser storage.
+Open `docs/index.html` directly in a browser, or use the [hosted generator](https://busheezy.github.io/cs2kz-linux/). No host runtime, package installation, or backend is needed to use the generator. It produces a ZIP with Compose, runtime settings, server configuration, optional SFTP keys/CS2KZ overrides, and launch instructions. Credentials are generated/processed locally and are never sent to a server or saved in browser storage.
 
 For **Build from this repository**, extract the downloaded server folder into this project's `deployments/` directory. The generated build context points to the same shared Dockerfile and selects `standalone`. For **Use a published image**, supply your standalone image reference and extract anywhere; supply your SFTP image too if enabling SFTP. These modes do not assume an image has already been published for this project.
 
@@ -143,7 +143,7 @@ Follow the generated instructions to set the deployment directory to mode `0700`
 
 Generated deployments include `console.sh`. Run `sh console.sh` from the deployment folder for an interactive game console with live logs. Type commands such as `status`, `meta list`, or `kz_reload_config`; command history is available with the arrow keys. Use `/exit`, Ctrl+C, or Ctrl+D to disconnect and leave the server running. The game command `quit` stops the game, and Compose may restart it.
 
-For existing deployments, run `sh /path/to/cs2kz-docker/scripts/console.sh` from the deployment folder. Rebuild and recreate older containers first with `docker compose up -d --build`. You can also open just the command prompt with `docker compose exec server cs2kz console` and view responses in a separate `docker compose logs -f server` terminal.
+For existing deployments, run `sh /path/to/cs2kz-linux/scripts/console.sh` from the deployment folder. Rebuild and recreate older containers first with `docker compose up -d --build`. You can also open just the command prompt with `docker compose exec server cs2kz console` and view responses in a separate `docker compose logs -f server` terminal.
 
 ```sh
 docker compose exec server cs2kz status
